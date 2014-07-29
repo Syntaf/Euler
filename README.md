@@ -1,4 +1,4 @@
 Euler
 =====
 
-Solving Project Euler problems using Rust
+Using rust to solved ProjectEuler problems.
