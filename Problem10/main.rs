@@ -26,5 +26,11 @@ fn is_prime(num: i64) -> bool {
 }
 
 fn main() {
-  println!("{}",is_prime(7));
+  let mut sum = 0i64;
+  for i in range(0i64, 2000000) {
+    if is_prime(i) {
+      sum += i;
+    }
+  }
+  println!("{}",sum);
 }
