@@ -5,7 +5,7 @@
 
 fn sum_of_squares() -> i64 {
 	let mut sum: i64 = 0;
-	for i in range(1,101) {
+	for i in range(1i,101) {
 		sum = sum + (i * i) as i64;
 	}
 	sum
@@ -13,7 +13,7 @@ fn sum_of_squares() -> i64 {
 
 fn square_of_sum() -> i64 {
 	let mut sum: i64 = 0;
-	for i in range(1,101) {
+	for i in range(1i,101) {
 		sum = sum + i as i64;
 	}
 	sum * sum

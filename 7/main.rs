@@ -12,7 +12,7 @@ fn is_prime(number: i64) -> bool {
 }
 
 fn main() {
-	let mut count = 0;
+	let mut count = 0i;
 	let mut n: i64 = 2;  //0 and 1 don't count dangit!
 	let mut answer: i64 = 0;
 	//while we havn't found the 10001'st prime number
