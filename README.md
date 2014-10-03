@@ -1,4 +1,6 @@
 Euler
 =====
+A personal project to write and solve as many Project Euler
+problems as I can using rust. 
 
-Using rust to solved ProjectEuler problems.
+Site: https://projecteuler.net/
