@@ -3,7 +3,7 @@
 */
 
 
-fn isMultiple(num: int) -> bool {
+fn is_multiple(num: int) -> bool {
 	num % 5 == 0 || num % 3 == 0
 }
 
@@ -13,7 +13,7 @@ fn main() {
 	//loop from 0..999
 	for i in range(0,1000) {
 		sum_of_multiples += 
-			if isMultiple(i) {
+			if is_multiple(i) {
 				i
 			}else{
 				0
