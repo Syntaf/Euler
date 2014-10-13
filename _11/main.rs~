@@ -55,7 +55,7 @@ fn find_largest_product(data: Vec<Vec<int>>) {
             //fill the digit array with the selected 4 digits to
             //test and find the product. If the product is greater
             //max product becomes the current product and then
-            //temp product is reset to zero
+            //temp product is reset to one(NOT ZERO)
 
             //test previous 4 elements
             if j - 4 > 0 {
@@ -63,7 +63,7 @@ fn find_largest_product(data: Vec<Vec<int>>) {
                     digits_answer[h] = data[i][j-h];
                     temp_product = temp_product * data[i][j-h];
                 }
-                if temp_proudct > max_product {
+                if temp_product > max_product {
                     max_product = temp_product;
                 }
                 temp_product = 1;
@@ -75,7 +75,7 @@ fn find_largest_product(data: Vec<Vec<int>>) {
                     digits_answer[h] = data[i][j+h];
                     temp_product = temp_product * data[i][j+h];
                 }
-                if temp_proudct > max_product {
+                if temp_product > max_product {
                     max_product = temp_product;
                 }
                 temp_product = 1;
@@ -91,6 +91,30 @@ fn find_largest_product(data: Vec<Vec<int>>) {
                     max_product = temp_product;
                 }
                 temp_product = 1;
+            
+                //test diagonal
+                if j + 4 < data[i].len() {
+                    for h in range(0u, 4) {
+                        digits_answer[h] = data[i-h][j+h];
+                        temp_product = temp_product * data[i-h][j+h];
+                    }
+                    if temp_product > max_product {
+                        max_product = temp_product;
+                    }
+                    temp_product = 1;
+                }
+
+                if j - 4 > 0 {
+                    for h in range(0u, 4) {
+                        digits_answer[h] = data[i-h][j-h];
+                        temp_product = temp_product * data[i-h][j-h];
+                    }
+                    if temp_product > max_product {
+                        max_product = temp_product;
+                    }
+                    temp_product = 1;
+                }
+                    
             }
 
             //test down 4 elements
@@ -103,6 +127,29 @@ fn find_largest_product(data: Vec<Vec<int>>) {
                     max_product = temp_product;
                 }
                 temp_product = 1;
+                
+                //test diagonal
+                if j + 4 < data[i].len() {
+                    for h in range(0u, 4) {
+                        digits_answer[h] = data[i+h][j+h];
+                        temp_product = temp_product * data[i+h][j+h];
+                    }
+                    if temp_product > max_product {
+                        max_product = temp_product;
+                    }
+                    temp_product = 1;
+                }
+                
+                //test opposite diagonal
+                if j - 4 > 0 {
+                    for h in range(0u, 4) {
+                        digits_answer[h] = data[i+h][j-h];
+                        temp_product = temp_product * data[i+h][j-h];
+                    }
+                    if temp_product > max_product {
+                        max_product = temp_product;
+                    }
+                }
             }
         }
     }
