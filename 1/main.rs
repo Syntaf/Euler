@@ -3,7 +3,7 @@
 */
 
 
-fn is_multiple(num: int) -> bool {
+fn is_multiple(num: i32) -> bool {
 	num % 5 == 0 || num % 3 == 0
 }
 
