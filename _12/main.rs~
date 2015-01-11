@@ -1,4 +1,5 @@
 /*
+<<<<<<< HEAD
   What is the value of the first triangle number to have over 500 divisors?
 */
 
@@ -10,7 +11,7 @@ fn calculate_triangle(num: uint) -> uint {
 
 fn num_divisors(mut n: uint) -> uint {
 	let mut divisors = 1u;
-	let mut f = 2u;
+	let f = 2u;
 	let mut count = 0u;
 	while n % f == 0 {
 		count += 1u;
@@ -53,4 +54,12 @@ fn first_triangle_with_more_than_n_divisors(n: uint) -> uint {
 fn main() {
 	let res = first_triangle_with_more_than_n_divisors(500);
 	println!("{}", calculate_triangle(res));
+=======
+ * What is the value of the first triangle number to have over 
+ * five hundred divisors?
+*/
+
+fn main() {
+
+>>>>>>> 02102d240d2c964843a5a7dc4b71fa97c008363c
 }
