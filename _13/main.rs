@@ -1,15 +1,11 @@
 // Work out the first ten digit sum of the 100,
 // 50-digit numbers in nums.dat
 
+mod bignum;
+
 use std::io::{BufReader, BufRead};
 use std::fs::File;
 use std::path::Path;
-
-fn string_add(op1: &[char], op2: &[char]) -> String {
-    let mut ret_str = "this".to_string();
-    ret_str.insert(0, op1[0]);
-    return ret_str;
-}
 
 fn main() {
     let file = File::open(&Path::new("nums.dat")).unwrap();
@@ -22,11 +18,15 @@ fn main() {
             Ok(y) => { Some(y) },
             _     => { None}
         }).collect();
-    test(&lines[0].chars().collect::<Vec<char>>());
-    println!("{}", lines[0].capacity());
 
-    for line in lines {
-        
-        println!("{}", line);
-    }
+    let big = bignum::BigNum::new(lines[0].clone());
+    let big_2 = bignum::BigNum::new(lines[1].clone());
+
+    let new_num = &big + &big_2;
+
+    println!("{}", big);
+
+    //for line in lines {        
+    //    println!("{}", line);
+    //}
 }
