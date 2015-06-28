@@ -12,21 +12,12 @@ fn main() {
     let reader = BufReader::new(file);
 
     // read all lines via the buffered reader, then filter
-    // any none values and unwrap the result
-    let lines: Vec<String> = reader.lines()
+    // any none values and unwrap the result into a BigNum
+    let numbers: Vec<bignum::BigNum> = reader.lines()
         .filter_map(|x| match x {
-            Ok(y) => { Some(y) },
+            Ok(y) => { Some(bignum::BigNum::new(y)) },
             _     => { None}
         }).collect();
 
-    let big = bignum::BigNum::new(lines[0].clone());
-    let big_2 = bignum::BigNum::new(lines[1].clone());
-
-    let new_num = &big + &big_2;
-
-    println!("{}", big);
-
-    //for line in lines {        
-    //    println!("{}", line);
-    //}
+    println!("{}", &numbers[0] + &numbers[1]);
 }
