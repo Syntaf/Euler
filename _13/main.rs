@@ -15,7 +15,7 @@ fn main() {
     // any none values and unwrap the result into a BigNum
     let numbers: Vec<bignum::BigNum> = reader.lines()
         .filter_map(|x| match x {
-            Ok(y) => { Some(bignum::BigNum::new(y)) },
+            Ok(y) => { Some(bignum::BigNum::new(&y)) },
             _     => { None}
         }).collect();
 
