@@ -1,0 +1,12 @@
+[root]
+name = "_13"
+version = "0.1.0"
+dependencies = [
+ "bignum 0.1.0 (git+https://github.com/syntaf/bignum.git)",
+]
+
+[[package]]
+name = "bignum"
+version = "0.1.0"
+source = "git+https://github.com/syntaf/bignum.git#dadadda172e402c4b84b6b7b4cf1025612fd5068"
+
