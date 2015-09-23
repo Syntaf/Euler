@@ -1,7 +1,7 @@
 Euler
 =====
 A personal project to write and solve as many Project Euler
-problems as I can using rust. 
+problems as I can using any language. 
 
 Site: https://projecteuler.net/
 
